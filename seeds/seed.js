@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
+const { User, Past, Future } = require('../models');
 
 const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+const pastData = require('./pastData.json');
+const futureData = require('./futureData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,9 +13,16 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
+  for (const past of pastData) {
+    await Past.create({
+      ...past,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+
+  for (const future of futureData) {
+    await Future.create({
+      ...future,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
