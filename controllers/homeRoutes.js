@@ -3,6 +3,31 @@ const { Past, Future, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Homepage
+router.get('/myparks', async (req, res) => {
+  try {
+    // Get all past and JOIN with user data
+    const pastData = await Past.findAll({
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['name'],
+      //   },
+      // ],
+    });
+
+    // Serialize data so the template can read it
+    const pastVisits = pastData.map((past) => past.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('homepage', {
+      pastVisits,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/', async (req, res) => {
   try {
     // Get all past and JOIN with user data
@@ -73,7 +98,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/myparks');
     return;
   }
 
