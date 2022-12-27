@@ -2,7 +2,8 @@ const router = require('express').Router();
 const { Past, Future, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Homepage
+// Homepage -- NOTE: THIS NEEDS SORTING. 
+// WE DON'T NEED A MYPARKS PAGE ANYMORE BUT THIS IS TIED IN WITH THE LOGIN/LOGOUT FUNCTIONALITY
 router.get('/myparks', async (req, res) => {
   try {
     // Get all past and JOIN with user data
@@ -27,6 +28,71 @@ router.get('/myparks', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+router.get('/past-trips', async (req, res) => {
+  try {
+    // Get all past and JOIN with user data
+    const pastData = await Past.findAll({
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['name'],
+      //   },
+      // ],
+    });
+
+    // Serialize data so the template can read it
+    const pastVisits = pastData.map((past) => past.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('pasttrips', {
+      pastVisits,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.get('/planned-trips', async (req, res) => {
+  try {
+    // Get all past and JOIN with user data
+    const futureData = await Future.findAll({
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['name'],
+      //   },
+      // ],
+    });
+
+    // Serialize data so the template can read it
+    const futureVisits = futureData.map((future) => future.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('plannedtrips', {
+      futureVisits,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.get('/add-a-trip', async (req, res) => {
+  try {
+    // Pass serialized data and session flag into template
+    res.render('addatrip', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.get('/', async (req, res) => {
   try {
