@@ -2,33 +2,6 @@ const router = require('express').Router();
 const { Past, Future, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Homepage -- NOTE: THIS NEEDS SORTING. 
-// WE DON'T NEED A MYPARKS PAGE ANYMORE BUT THIS IS TIED IN WITH THE LOGIN/LOGOUT FUNCTIONALITY
-router.get('/myparks', async (req, res) => {
-  try {
-    // Get all past and JOIN with user data
-    const pastData = await Past.findAll({
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['name'],
-      //   },
-      // ],
-    });
-
-    // Serialize data so the template can read it
-    const pastVisits = pastData.map((past) => past.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('homepage', {
-      pastVisits,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 
 router.get('/past-trips', async (req, res) => {
   try {
@@ -119,6 +92,12 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+
+/*  
+// PRETTY SURE WE CAN DELETE ALL THIS, 
+// BUT KEEPING IT COMMENTED OUT FOR NOW JUST IN CASE
+
 router.get('/project/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
@@ -170,5 +149,6 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+ */
 
 module.exports = router;

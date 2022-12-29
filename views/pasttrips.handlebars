@@ -2,25 +2,18 @@
   <h1>Past Trips</h1>
 </div>
 
-
 <!-- ACCORDION STRUCTURE FOR TRIP INFO BLOCKS -->
 <div class="accordion">
+{{#each pastVisits as |pasttrip|}}
   <div class="park-block"> 
       <h4>Name of the Park</h4>
       <div class="location-info">
-          PARK AND TRIP INFO GO HERE 
+          <p>{{pasttrip.travel_month}} / {{pasttrip.travel_year}}</p>
+          <p>{{activity_list.review}}</p>
+          <p>{{pasttrip.review}}</p>
+          <p>{{pasttrip.lodging}}</p>
+          <p>{{pasttrip.companion_info}}</p>
       </div>
   </div>
-  <div class="park-block">
-      <h4>Name of another Park</h4>
-      <div class="location-info">
-          PARK AND TRIP INFO GO HERE 
-      </div>
-  </div>
-  <div class="park-block">
-      <h4>Name of a Third Park</h4>
-      <div class="location-info">
-          PARK AND TRIP INFO GO HERE 
-      </div>
-  </div>
+{{/each}}
 </div>
