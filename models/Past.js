@@ -38,7 +38,7 @@ Past.init(
         key: 'id',
       },
     },
-    park_id: {
+    park_name: {
       type: DataTypes.STRING,
     },
   },

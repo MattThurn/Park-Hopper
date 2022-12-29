@@ -4,20 +4,20 @@
     "lodging": "Cabins",
     "companion_info": "Mom, Dad",
     "user_id": 2,
-    "park_id": "test"
+    "park_name": "Yellowstone National Park"
   },
   {
     "activity_list": "Grand Canyon",
     "lodging": "campground",
     "companion_info": "sister, brother",
     "user_id": 1,
-    "park_id": "test2"
+    "park_name": "Grand Canyon National Park"
   },
   {
-    "activity_list": "Arches",
+    "activity_list": "Arches, Hiking",
     "lodging": "Hotel",
     "companion_info": "Dog, Friends",
     "user_id": 3,
-    "park_id": "test3"
+    "park_name": "Arches National Park"
   }
 ]
