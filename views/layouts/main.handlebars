@@ -1,63 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Park Hopper</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Park Hopper</title>
+    <link rel='stylesheet' href='/css/jass.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+  <body>
+    <div class='flex-column justify-space-around'>
+      <header class='display-flex justify-space-between align-center p-2'>
 
-      <!-- REPLACE TITLE TEXT WITH LOGO IMAGE public/images -->
-      <h1>
-        Park Hopper
-      </h1>
+        <!-- REPLACE TITLE TEXT WITH LOGO IMAGE public/images -->
+        <h1>
+          <a href='/'>
+            <img
+              src='../../public/images/logo-parkhopper.png'
+              alt='Park Hopper Logo'
+              style=''
+            />
+          </a>
+        </h1>
 
+        <!-- ADD HERO IMAGES HERE. RANDOM SELECTION OF THE IMAGES IN public/images -->
 
+        <nav>
+          <a href='/'>HOME</a>
+          <a href='/past-trips'>PAST TRIPS</a>
+          <a href='/planned-trips'>PLANNED TRIPS</a>
+          <a href='/add-a-trip'>ADD A TRIP</a>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+            <a href='/profile'>profile</a>
+            <button class='no-button' id='logout'>logout</button>
+          {{else}}
+            <a href='/'>login</a>
+          {{/if}}
+        </nav>
 
-      <!-- ADD HERO IMAGES HERE. RANDOM SELECTION OF THE IMAGES IN public/images -->
+      </header>
 
+      <main class='container container-fluid mt-5'>
+        <!-- Render the sub layout -->
+        {{{body}}}
+      </main>
+      <footer>
 
+      </footer>
+    </div>
 
-      <nav>
-        <a href="/">HOME</a> 
-        <a href="/past-trips">PAST TRIPS</a> 
-        <a href="/planned-trips">PLANNED TRIPS</a> 
-        <a href="/add-a-trip">ADD A TRIP</a> 
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/">login</a>
-        {{/if}}
-      </nav>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
 
-    </header>
+    <script
+      src='https://code.jquery.com/jquery-3.6.1.min.js'
+      integrity='sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ='
+      crossorigin='anonymous'
+    ></script>
+    <script src='./js/accordion.js'></script>
 
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-
-
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  <script src="./js/accordion.js"></script>
-  
-</body>
+  </body>
 
 </html>
