@@ -12,7 +12,7 @@
   <body class="">
     <div>
       <header>
-
+        {{!-- Logo that doubles as button to return to home screen --}}
         <h1 class="container mx-auto break-after-all m-3">
           <a href='/'>
             <img
@@ -22,8 +22,12 @@
           </a>
         </h1>
 
-        <!-- ADD HERO IMAGES HERE. RANDOM SELECTION OF THE IMAGES IN public/images -->
-        <p><img src='../../public/images/hero-cacti.png' class='flow-root' /></p>
+        <!-- Hero images -->
+        <p>
+          <img src='../../public/images/hero-cacti.png' class='visible flow-root' />
+          <img src='../../public/images/hero-glacier.png' class='hidden flow-root' />
+          <img src='../../public/images/hero-waterfall.png' class='hidden flow-root' />
+        </p>
 
         <nav class="container text-center">
           <a href='/'>HOME</a>
