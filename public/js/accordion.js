@@ -6,11 +6,11 @@ $( document ).ready(function() {
         if ( $(this).hasClass("box-open") ) {
 
             $(this).parent().find(".location-info").slideUp();
-            $(this).parent().find("h4").removeClass("box-open");
+            $(this).removeClass("box-open");
         } else {
 
             $(this).parent().find(".location-info").slideDown();
-           $(this).parent().find("h4").addClass("box-open");
+            $(this).addClass("box-open");
         }
     });
 });

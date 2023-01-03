@@ -1,51 +1,84 @@
+const pastFields = document.getElementById('past-trip-fields');
+const futureFields = document.getElementById('future-trip-fields');
+var typeOfTrip = '';
+
+// Handle form data and send to database
 const newParkHandler = async (event) => {
     event.preventDefault();
 
     console.log("new trip form submitted");
-  
-    /* const name = document.querySelector('#project-name').value.trim();
-    const needed_funding = document.querySelector('#project-funding').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
-   */
-
-    // FORM VALUES HARD-CODED FOR TESTING
-    // ASSUMED: FUTURE TRIP
-    /* const user_id = "2"; // this will come from a data attribute
-    const park_id = "2";
-    const park_name = "Glacier National Park"; // not being used
-    const activity_list = "Swimming and freezing";
-    const lodging = "Holiday Inn";
-    const companion_info = "Bob and Linda"; */
-
 
     const user_id = "2"; // HARD-CODED TILL WE CONNECT USERS AND TRIPS
     const park_name = document.querySelector('#park-name').value.trim();
+    const travel_month = document.querySelector('#trip-month').value;
+    const travel_year = document.querySelector('#trip-year').value.trim();
     const activity_list = document.querySelector('#activity-list').value.trim();
+    const trip_review = document.querySelector('#trip-review').value.trim();
     const lodging= document.querySelector('#lodging').value.trim();
     const companion_info = document.querySelector('#companion-info').value.trim();
 
-    const tripData = {
-        'activity_list': activity_list,
-        'lodging': lodging,
-        'companion_info': companion_info,
-        'user_id': user_id,
-        'park_name': park_name
-    }
-    
-    const response = await fetch(`/api/futureRoutes`, {
-    method: 'POST',
-    body: JSON.stringify(tripData),
-    headers: {
-        'Content-Type': 'application/json'
-    }
-    });
+    switch (typeOfTrip) {
+      case "past":
 
-    if (response.ok) {
-    document.location.replace('/planned-trips');
-    } else {
-    alert('Failed to create new trip');
-    }
+        const pastTripData = {
+            'travel_month': travel_month,
+            'travel_year': travel_year,
+            'activity_list': activity_list,
+            'review': trip_review,
+            'lodging': lodging,
+            'companion_info': companion_info,
+            'user_id': user_id,
+            'park_name': park_name
+        }
+        console.log(pastTripData);
+        
+        const pResponse = await fetch(`/api/pastRoutes`, {
+        method: 'POST',
+        body: JSON.stringify(pastTripData),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+        });
     
+        if (pResponse.ok) {
+        document.location.replace('/past-trips');
+        } else {
+        alert('Failed to create new trip');
+        }
+
+        break;
+      
+      case "future":
+
+        const futureTripData = {
+            'activity_list': activity_list,
+            'lodging': lodging,
+            'companion_info': companion_info,
+            'user_id': user_id,
+            'park_name': park_name
+        }
+        
+        const fResponse = await fetch(`/api/futureRoutes`, {
+        method: 'POST',
+        body: JSON.stringify(futureTripData),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+        });
+    
+        if (fResponse.ok) {
+        document.location.replace('/planned-trips');
+        } else {
+        alert('Failed to create new trip');
+        }
+
+        break;
+    
+      default:
+        // FORM CHECKING NEEDED! - Form not submitted to database.
+        // Prompt user to select trip type and complete all fields
+        break;
+    }
   };
   
   const delButtonHandler = async (event) => {
@@ -67,10 +100,36 @@ const newParkHandler = async (event) => {
       }
     }
   };
-  
+
+// Adjust form for type of trip being added by user
+function addFieldsPast() {
+  typeOfTrip = "past";
+  var radioFuture = document.querySelector('input[type=radio][name="trip-future"]');
+  radioFuture.checked = false;
+  pastFields.style.display = 'block';
+  futureFields.style.display = 'none';
+}
+
+function addFieldsFuture() {
+  typeOfTrip = "future";
+  var radioPast = document.querySelector('input[type=radio][name="trip-past"]');
+  radioPast.checked = false;
+  futureFields.style.display = 'block';
+  pastFields.style.display = 'none';
+}
 
 
 if(document.querySelector('.new-park-form')) {
+
+    // Find out if it's a past or future trip and adjust form accordingly
+    document
+        .querySelector('input[name="trip-past"]')
+        .addEventListener('change', addFieldsPast);
+    document
+        .querySelector('input[name="trip-future"]')
+        .addEventListener('change', addFieldsFuture);
+
+    // Handle the form data and save to database
     document
         .querySelector('.new-park-form')
         .addEventListener('submit', newParkHandler);
@@ -83,5 +142,3 @@ if(document.querySelector('.project-list')) {
         .querySelector('.project-list')
         .addEventListener('click', delButtonHandler);
 }
-
-  
