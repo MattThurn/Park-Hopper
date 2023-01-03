@@ -38,8 +38,24 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public/images'));
 app.get('/public/images/logo-parkhopper.png', (req, res) => {
   res.sendFile(__dirname + '/public/images/logo-parkhopper.png');
+});
+app.get('/public/images/hero-cacti.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/hero-cacti.png');
+});
+app.get('/public/images/hero-glacier.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/hero-glacier.png');
+});
+app.get('/public/images/hero-waterfall.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/hero-waterfall.png');
+});
+app.get('/public/images/icon-closed.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/icon-closed.png');
+});
+app.get('/public/images/icon-open.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/icon-open.png');
 });
 app.use(routes);
 

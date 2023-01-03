@@ -6,14 +6,14 @@
     <title>Park Hopper</title>
     <link rel='stylesheet' href='/css/jass.css' />
     <link rel='stylesheet' href='/css/style.css' />
+    <link rel="stylesheet"  href="/css/styles.css"/>
   </head>
 
-  <body>
-    <div class='flex-column justify-space-around'>
-      <header class='display-flex justify-space-between align-center p-2'>
-
-        <!-- REPLACE TITLE TEXT WITH LOGO IMAGE public/images -->
-        <h1>
+  <body class="">
+    <div>
+      <header>
+        {{!-- Logo that doubles as button to return to home screen --}}
+        <h1 class="container mx-auto break-after-all m-3">
           <a href='/'>
             <img
               src='./public/images/logo-parkhopper.png'
@@ -22,9 +22,14 @@
           </a>
         </h1>
 
-        <!-- ADD HERO IMAGES HERE. RANDOM SELECTION OF THE IMAGES IN public/images -->
+        <!-- Hero images -->
+        <p>
+          <img src='../../public/images/hero-cacti.png' class='visible flow-root' />
+          {{!-- <img src='../../public/images/hero-glacier.png' class='hidden flow-root' />
+          <img src='../../public/images/hero-waterfall.png' class='hidden flow-root' /> --}}
+        </p>
 
-        <nav>
+        <nav class="container text-center">
           <a href='/'>HOME</a>
           <a href='/past-trips'>PAST TRIPS</a>
           <a href='/planned-trips'>PLANNED TRIPS</a>
@@ -65,17 +70,20 @@
 
 
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
 
+    <script
+      src='https://code.jquery.com/jquery-3.6.1.min.js'
+      integrity='sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ='
+      crossorigin='anonymous'
+    ></script>
+    <script src='./js/accordion.js'></script>
+    <script src='./js/manageTrips.js'></script>
 
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  <script src="./js/accordion.js"></script>
-  <script src="./js/manageTrips.js"></script>
-  
-</body>
+  </body>
 
 </html>
 
