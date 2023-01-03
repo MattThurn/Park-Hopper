@@ -2,7 +2,9 @@ const router = require('express').Router();
 const { Past } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+
+//router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newPast = await Past.create({
       ...req.body,
