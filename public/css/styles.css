@@ -584,6 +584,10 @@ video {
   margin-top: 2.5rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .w-2\/5 {
   width: 40%;
 }
@@ -628,12 +632,21 @@ video {
   background-color: rgb(113 63 18 / var(--tw-bg-opacity));
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-3 {
   padding: 0.75rem;
 }
 
 .pl-4 {
   padding-left: 1rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
 .text-left {
@@ -670,4 +683,10 @@ video {
 .text-slate-700 {
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  .sm\:w-full {
+    width: 100%;
+  }
 }
