@@ -576,17 +576,27 @@ video {
   margin-top: 1.25rem;
 }
 
-.flow-root {
-  display: flow-root;
-}
-
 .hidden {
   display: none;
+}
+
+.w-2\/5 {
+  width: 40%;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .break-after-all {
   -moz-column-break-after: all;
        break-after: all;
+}
+
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-6 > :not([hidden]) ~ :not([hidden]) {
