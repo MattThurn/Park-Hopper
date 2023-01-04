@@ -19,4 +19,14 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  // this helper gets a random image for the hero banner
+  get_image: () => {
+    const images = [
+      '../../public/images/hero-cacti.png',
+      '../../public/images/hero-glacier.png',
+      '../../public/images/hero-waterfall.png',
+    ];
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+    return randomImage;
+  },
 };
