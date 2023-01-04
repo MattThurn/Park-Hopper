@@ -81,20 +81,40 @@ const newParkHandler = async (event) => {
     }
   };
   
-  const delButtonHandler = async (event) => {
-
-    // TO-DO: CHECK TO FIND OUT IF USER CLICKED EDIT OR DELETE BUTTON
-    // THEN ADD EDIT FUNCTIONALITY 
+  const pastDelButtonHandler = async (event) => {
+    event.preventDefault();
+    console.log("clicked");
 
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
+      const idNum = parseInt(id, 10);
   
-      const response = await fetch(`/api/projects/${id}`, {
+      const response = await fetch(`/api/pastRoutes/${idNum}`, {
         method: 'DELETE',
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.reload();
+      } else {
+        alert('Failed to delete project');
+      }
+    }
+  };
+
+  const futureDelButtonHandler = async (event) => {
+    event.preventDefault();
+    console.log("clicked");
+
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+      const idNum = parseInt(id, 10);
+  
+      const response = await fetch(`/api/futureRoutes/${idNum}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.reload();
       } else {
         alert('Failed to delete project');
       }
@@ -136,9 +156,14 @@ if(document.querySelector('.new-park-form')) {
 }
 
   
-// THIS IS FOR A BUTTON ON PAST AND PLANNED TRIPS THAT LETS THE USER EDIT AND DELETE TRIPS
-if(document.querySelector('.project-list')) {
+// delete trip by id
+if(document.querySelector('.past-trip-delete')) {
     document
-        .querySelector('.project-list')
-        .addEventListener('click', delButtonHandler);
+        .querySelector('.past-trip-delete')
+        .addEventListener('click', pastDelButtonHandler);
+}
+if(document.querySelector('.future-trip-delete')) {
+  document
+      .querySelector('.future-trip-delete')
+      .addEventListener('click', futureDelButtonHandler);
 }
