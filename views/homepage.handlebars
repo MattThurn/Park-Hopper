@@ -1,5 +1,5 @@
 {{#unless logged_in}}
-  <div class='row space-x-1'>
+  <div class='row space-x-1 mb-5'>
     <div class='col-md-5 bg-lime-900 rounded-md w-2/5'>
       <h2 class='text-white p-3 text-lg'>Login</h2>
 
@@ -18,7 +18,16 @@
       </form>
     </div>
 
-    <div class='col-md-5 bg-lime-900 rounded-md w-2/5'>
+    <div class='col-md-5 rounded-md w-2/5'>
+      <h2 class='text-xl font-bold'>Welcome to Park Hopper!</h2>
+      </br>
+      <h4>This is where you can document your national park visits and write
+        down your day dreams for your next trip.
+      </h4>
+
+    </div>
+
+    {{! <div class='col-md-5 bg-lime-900 rounded-md w-2/5'>
       <h2 class='text-white p-3 text-lg'>Register</h2>
 
       <form class='form signup-form text-white'>
@@ -38,7 +47,7 @@
           <button class='btn bg-amber-600' type='submit'>Register</button>
         </div>
       </form>
-    </div>
+    </div> }}
   </div>
 
 {{/unless}}

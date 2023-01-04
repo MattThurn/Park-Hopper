@@ -13,7 +13,7 @@
     <div>
       <header>
         {{! Logo that doubles as button to return to home screen }}
-        <h1 class='container mx-auto break-after-all m-3'>
+        <h1 class='container.container-fluid mx-auto break-after-all m-3'>
           <a href='/'>
             <img
               src='./public/images/logo-parkhopper.png'
@@ -22,15 +22,13 @@
           </a>
         </h1>
 
-        <!-- Hero images -->
+        <!-- Random hero images -->
         <p class='p-3'>
           <img src='{{get_image}}' class='visible' />
-          {{! <img src='../../public/images/hero-glacier.png' class='hidden' />
-          <img src='../../public/images/hero-waterfall.png' class='hidden' /> }}
         </p>
 
         <nav
-          class='container text-left space-x-6 bg-yellow-900 text-white text-lg pl-4 w-full'
+          class='container.container-fluid text-left space-x-6 bg-yellow-900 text-white text-lg pl-4 w-full'
         >
           <a href='/'>HOME</a>
           <a href='/past-trips'>PAST TRIPS</a>
@@ -41,10 +39,9 @@
             <a href='/profile'>PROFILE</a>
             <button class='no-button' id='logout'>LOGOUT</button>
           {{else}}
-            <a href='/'>LOGIN</a>
+            <a href='/'>REGISTER</a>
           {{/if}}
         </nav>
-
       </header>
 
       <main class='container container-fluid mt-5'>
