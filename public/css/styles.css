@@ -588,12 +588,12 @@ video {
   height: 3rem;
 }
 
-.w-2\/5 {
-  width: 40%;
-}
-
 .w-full {
   width: 100%;
+}
+
+.w-2\/5 {
+  width: 40%;
 }
 
 .break-after-all {
@@ -686,7 +686,21 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:w-full {
-    width: 100%;
+  .sm\:h-24 {
+    height: 6rem;
+  }
+
+  .sm\:flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:w-2\/5 {
+    width: 40%;
+  }
+
+  .md\:flex-nowrap {
+    flex-wrap: nowrap;
   }
 }
