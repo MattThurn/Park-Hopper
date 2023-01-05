@@ -25,6 +25,10 @@ module.exports = {
       '../../public/images/hero-cacti.png',
       '../../public/images/hero-glacier.png',
       '../../public/images/hero-waterfall.png',
+      '../../public/images/hero-zions.png',
+      '../../public/images/hero-canyon.png',
+      '../../public/images/hero-arches.png',
+      '../../public/images/hero-bryce.png',
     ];
     const randomImage = images[Math.floor(Math.random() * images.length)];
     return randomImage;

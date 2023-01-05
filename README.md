@@ -37,6 +37,11 @@ Ryan: https://github.com/rtcottle
 Tailwindcss: https://tailwindcss.com/
 MySQL: https://www.mysql.com/
 
+Images: 
+- Arches: https://unsplash.com/photos/MepkNCgX4VY
+- Grand Canyon: https://unsplash.com/photos/M0Y7_vHEuo4
+- Zions: https://unsplash.com/photos/BVteGnmsPzk
+- Bryce: https://unsplash.com/photos/kKgKnv5KakE
 
 ## License
 

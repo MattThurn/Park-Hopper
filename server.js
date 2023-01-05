@@ -51,6 +51,18 @@ app.get('/public/images/hero-glacier.png', (req, res) => {
 app.get('/public/images/hero-waterfall.png', (req, res) => {
   res.sendFile(__dirname + '/public/images/hero-waterfall.png');
 });
+app.get('/public/images/hero-arches.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/hero-arches.png');
+});
+app.get('/public/images/hero-bryce.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/hero-bryce.png');
+});
+app.get('/public/images/hero-canyon.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/hero-canyon.png');
+});
+app.get('/public/images/hero-zions.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/hero-zions.png');
+});
 app.get('/public/images/icon-closed.png', (req, res) => {
   res.sendFile(__dirname + '/public/images/icon-closed.png');
 });
