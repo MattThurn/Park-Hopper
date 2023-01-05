@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the myparks page
       console.log('Login.js line 18 --> Response Okay');
-      document.location.replace('/myparks');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

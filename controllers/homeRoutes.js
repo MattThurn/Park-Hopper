@@ -3,16 +3,13 @@ const { Past, Future, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/past-trips', async (req, res) => {
+router.get('/past-trips', withAuth, async (req, res) => {
   try {
     // Get all past and JOIN with user data
     const pastData = await Past.findAll({
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['name'],
-      //   },
-      // ],
+    where: {
+      user_id: req.session.user_id
+    }
     });
 
     // Serialize data so the template can read it
@@ -29,16 +26,13 @@ router.get('/past-trips', async (req, res) => {
 });
 
 
-router.get('/planned-trips', async (req, res) => {
+router.get('/planned-trips', withAuth, async (req, res) => {
   try {
     // Get all past and JOIN with user data
     const futureData = await Future.findAll({
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['name'],
-      //   },
-      // ],
+    where: {
+      user_id: req.session.user_id
+    }
     });
 
     // Serialize data so the template can read it
@@ -55,7 +49,7 @@ router.get('/planned-trips', async (req, res) => {
 });
 
 
-router.get('/add-a-trip', async (req, res) => {
+router.get('/add-a-trip', withAuth, async (req, res) => {
   try {
     // Pass serialized data and session flag into template
     res.render('addatrip', {
