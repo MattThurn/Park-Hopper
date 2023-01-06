@@ -1,54 +1,68 @@
-<div class='text-center'>
-  <h1>Add A Trip</h1>
-</div>
-
-
-<form class="new-park-form">
-
-  <div>
-    Would you like to add a past trip or plan a new one? <br />
-    <input type="radio" name="trip-past" /> Add a Past Trip <br />
-    <input type="radio" name="trip-future" /> Plan a New Trip
+{{! container for this whole form }}
+<div class='container mb-5 w-full'>
+  <div class='text-center'>
+    <h1 class='font-bold'>Add A Trip</h1>
   </div>
 
-  <!-- THESE WILL BE PULLED FROM THE API LATER. JUST HARD-CODED FOR NOW FOR TESTING -->
-  <select id="park-name">
-    <option>Acadia National Park</option>
-    <option>Arches National Park</option>
-    <option>Bryce Canyon National Park</option>
-    <option>Grand Canyon National Park</option>
-    <option>Grand Teton National Park</option>
-    <option>Joshua Tree National Park</option>
-  </select>
+  <form
+    class='new-park-form bg-lime-900 rounded-md text-white space-y-3 space-x-3 p-3'
+  >
 
-  <div id="past-trip-fields">
     <div>
-      Trip Month and Year: <br />
-      <select id="trip-month">
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
-      </select> <input type="text" id="trip-year" />
+      Would you like to add a past trip or plan a new one?
+      <br />
+      <input type='radio' name='trip-past' />
+      Add a Past Trip
+      <br />
+      <input type='radio' name='trip-future' />
+      Plan a New Trip
     </div>
-    <div>Review: <br /><textarea id="trip-review"></textarea></div>
-  </div> <!-- end of past-trip-fields -->
 
-  <div id="future-trip-fields">
-    Cost of Admission: $<input type="text" id="trip-cost" />
-  </div> <!-- end of future-trip-fields -->
-  
-  <div>Lodging: <input type="text" id="lodging" /></div>
-  <div>Companions: <input type="text" id="companion-info" /></div>
-  <div>Activities: <br /><textarea id="activity-list"></textarea></div>
-  <div><input type="submit" value="SUBMIT" /></div>
-  
-</form>
+    <!-- THESE WILL BE PULLED FROM THE API LATER. JUST HARD-CODED FOR NOW FOR TESTING -->
+    <select id='park-name'>
+      <option>Acadia National Park</option>
+      <option>Arches National Park</option>
+      <option>Bryce Canyon National Park</option>
+      <option>Grand Canyon National Park</option>
+      <option>Grand Teton National Park</option>
+      <option>Joshua Tree National Park</option>
+    </select>
+
+    <div id='past-trip-fields'>
+      <div>
+        Trip Month and Year:
+        <br />
+        <select id='trip-month'>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+        <input type='text' id='trip-year' />
+      </div>
+      <br />
+      <div>Review: <br /><textarea id='trip-review'></textarea></div>
+    </div>
+    <!-- end of past-trip-fields -->
+
+    <div id='future-trip-fields'>
+      Cost of Admission:
+      <br />$<input type='text' id='trip-cost' />
+    </div>
+    <!-- end of future-trip-fields -->
+
+    <div>Lodging: <br /><input type='text' id='lodging' /></div>
+    <div>Companions: <br /> <input type='text' id='companion-info' /></div>
+    <div>Activities: <br /><textarea id='activity-list'></textarea></div>
+    <div><input type='submit' value='SUBMIT' class='btn bg-amber-600' /></div>
+
+  </form>
+</div>
