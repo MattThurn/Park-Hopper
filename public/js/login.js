@@ -23,7 +23,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
-const signupFormHandler = async (event) => {
+/* const signupFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#name-signup').value.trim();
@@ -43,7 +43,7 @@ const signupFormHandler = async (event) => {
       alert(response.statusText);
     }
   }
-};
+}; */
 
 
 var loginForm = document.querySelector('.login-form');
@@ -51,10 +51,10 @@ if(loginForm) {
   loginForm.addEventListener('submit', loginFormHandler);
 }
 
-var signupForm = document.querySelector('.signup-form');
+/* var signupForm = document.querySelector('.signup-form');
 if(loginForm) {
   loginForm.addEventListener('submit', signupFormHandler);
-}
+} */
 
 /* document
   .querySelector('.login-form')

@@ -60,6 +60,17 @@ router.get('/add-a-trip', withAuth, async (req, res) => {
   }
 });
 
+router.get('/register', async (req, res) => {
+  try {
+    // Pass serialized data and session flag into template
+    res.render('register', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.get('/', async (req, res) => {
   try {
