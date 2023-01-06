@@ -1,7 +1,7 @@
 {{! container for this whole form }}
 <div class='container mb-5 w-full'>
   <div class='text-center'>
-    <h1 class='font-bold'>Add A Trip</h1>
+    <h1 class='font-bold mb-5'>- - Add A Trip - -</h1>
   </div>
 
   <form
@@ -20,6 +20,7 @@
 
     <!-- THESE WILL BE PULLED FROM THE API LATER. JUST HARD-CODED FOR NOW FOR TESTING -->
     <select id='park-name'>
+      <option value='none'>Select a park</option>
       <option>Acadia National Park</option>
       <option>Arches National Park</option>
       <option>Bryce Canyon National Park</option>
@@ -33,6 +34,7 @@
         Trip Month and Year:
         <br />
         <select id='trip-month'>
+          <option value='none'>Select a month</option>
           <option>January</option>
           <option>February</option>
           <option>March</option>
@@ -46,22 +48,41 @@
           <option>November</option>
           <option>December</option>
         </select>
-        <input type='text' id='trip-year' />
+        <input type='text' id='trip-year' placeholder='2023' />
       </div>
       <br />
-      <div>Review: <br /><textarea id='trip-review'></textarea></div>
+      <div>Review:
+        <br /><textarea
+          id='trip-review'
+          placeholder='I loved visiting...'
+        ></textarea></div>
     </div>
     <!-- end of past-trip-fields -->
 
     <div id='future-trip-fields'>
       Cost of Admission:
-      <br />$<input type='text' id='trip-cost' />
+      <br />$<input type='text' id='trip-cost' placeholder='250' />
     </div>
     <!-- end of future-trip-fields -->
 
-    <div>Lodging: <br /><input type='text' id='lodging' /></div>
-    <div>Companions: <br /> <input type='text' id='companion-info' /></div>
-    <div>Activities: <br /><textarea id='activity-list'></textarea></div>
+    <div>Lodging:
+      <br /><input
+        type='text'
+        id='lodging'
+        placeholder='Tent, RV, Hotel, etc.'
+      /></div>
+    <div>Companions:
+      <br />
+      <input
+        type='text'
+        id='companion-info'
+        placeholder='Friends, family, etc. '
+      /></div>
+    <div>Activities:
+      <br /><textarea
+        id='activity-list'
+        placeholder='Hiking, cook-off, etc.'
+      ></textarea></div>
     <div><input type='submit' value='SUBMIT' class='btn bg-amber-600' /></div>
 
   </form>
