@@ -29,10 +29,10 @@ This can be used to
 
 ## Credits
 
-Jennifer: https://github.com/JennyFletch
-Matthew: https://github.com/MattThurn
-Ethan: 
-Ryan: https://github.com/rtcottle
+- Jennifer: https://github.com/JennyFletch
+- Matthew: https://github.com/MattThurn
+- Ethan: 
+- Ryan: https://github.com/rtcottle
 
 Tailwindcss: https://tailwindcss.com/
 MySQL: https://www.mysql.com/
