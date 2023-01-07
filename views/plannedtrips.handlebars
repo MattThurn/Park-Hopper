@@ -1,5 +1,5 @@
 <div class='text-center'>
-  <h1>Planned Trips</h1>
+  <h1 class="text-xl font-bold">Planned Trips</h1>
 </div>
 
 
@@ -9,10 +9,15 @@
   <div class="park-block"> 
       <h4>{{plannedtrip.park_name}}</h4>
       <div class="location-info">
-          <button type="button" class="future-trip-delete" data-id="{{plannedtrip.id}}">delete</button>
-          <p>{{plannedtrip.activity_list}}</p>
-          <p>{{plannedtrip.lodging}}</p>
-          <p>{{plannedtrip.companion_info}}</p>
+          <div class="location-info">
+          <div class="relative h-32 w-32 ...">
+            <div class="absolute top-0 right-0 h-16 w-16 ...">
+              <button type="button" class="past-trip-delete text-bold" data-id="{{pasttrip.id}}"><i class="fa fa-trash-o" style="font-size:36px"></i></button>
+            </div>
+          </div>
+          <p>Lodging: {{plannedtrip.lodging}}</p>
+          <p>Companion(s): {{plannedtrip.companion_info}}</p>
+          <p>Activities: {{plannedtrip.activity_list}}</p>
       </div>
   </div>
 {{/each}}

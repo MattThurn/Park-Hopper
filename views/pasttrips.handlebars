@@ -1,5 +1,5 @@
 <div class='text-center'>
-  <h1>Past Trips</h1>
+  <h1 class="text-xl font-bold">Past Trips</h1>
 </div>
 
 <!-- ACCORDION STRUCTURE FOR TRIP INFO BLOCKS -->
@@ -8,12 +8,16 @@
   <div class="park-block"> 
       <h4>{{pasttrip.park_name}}</h4>
       <div class="location-info">
-          <button type="button" class="past-trip-delete" data-id="{{pasttrip.id}}">delete</button>
-          <p>{{pasttrip.travel_month}} / {{pasttrip.travel_year}}</p>
-          <p>{{pasttrip.activity_list}}</p>
-          <p>{{pasttrip.review}}</p>
-          <p>{{pasttrip.lodging}}</p>
-          <p>{{pasttrip.companion_info}}</p>
+          <div class="relative h-32 w-32 ...">
+            <div class="absolute top-0 right-0 h-16 w-16 ...">
+              <button type="button" class="past-trip-delete text-bold" data-id="{{pasttrip.id}}"><i class="fa fa-trash-o" style="font-size:36px"></i></button>
+            </div>
+          </div>
+          <p>Travel Dates: {{pasttrip.travel_month}} / {{pasttrip.travel_year}}</p>
+          <p>Trip Review: {{pasttrip.review}}</p>
+          <p>Lodging: {{pasttrip.lodging}}</p>
+          <p>Companion(s): {{pasttrip.companion_info}}</p>
+          <p>Activities: {{pasttrip.activity_list}}</p>
       </div>
   </div>
 {{/each}}
