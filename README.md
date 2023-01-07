@@ -4,7 +4,6 @@
 
 This application is for those that like to visit national parks. This can be used to both record thoughts from past visits and dream-plan future visits. 
 
-
 ## Table of Contents
 
 - [Park-Hopper](#park-hopper)
@@ -25,7 +24,10 @@ N/A
 
 ## Usage
 
-This can be used to 
+Repo: https://github.com/MattThurn/Park-Hopper
+App: https://park-hopper.herokuapp.com/
+
+This can be used to journal past trips to national parks. There are areas for comments/reviews, who came with you, and what park you visited. Also, this app can be used to document future dream-trips. Including ideas, potential costs, and desired activities. 
 
 ## Credits
 
@@ -50,15 +52,17 @@ This project is under the [![License: MIT](https://img.shields.io/badge/License-
 ## Features
 
 - Track past visits to national parks. 
+- Document trip dreams/ideas.
 
 ## How to Contribute
 
-
+Via GitHub repository. 
 
 ## Tests
 
-
+- You can only add trips if you register as a user. 
+- Add both past and future trips in the add a trip tab.  
 
 ## Questions
 
-
+<!-- ADD HERE -->
