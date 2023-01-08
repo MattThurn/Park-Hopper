@@ -8,7 +8,7 @@ const newParkHandler = async (event) => {
 
     console.log("new trip form submitted");
 
-    const user_id = "2"; // HARD-CODED TILL WE CONNECT USERS AND TRIPS
+    const user_id = "2";
     const park_name = document.querySelector('#park-name').value.trim();
     const travel_month = document.querySelector('#trip-month').value;
     const travel_year = document.querySelector('#trip-year').value.trim();
@@ -83,9 +83,9 @@ const newParkHandler = async (event) => {
   
   const pastDelButtonHandler = async (event) => {
     event.preventDefault();
-    console.log("clicked");
 
     if (event.target.hasAttribute('data-id')) {
+      console.log("clicked and has an id");
       const id = event.target.getAttribute('data-id');
       const idNum = parseInt(id, 10);
   
@@ -103,9 +103,9 @@ const newParkHandler = async (event) => {
 
   const futureDelButtonHandler = async (event) => {
     event.preventDefault();
-    console.log("clicked");
 
     if (event.target.hasAttribute('data-id')) {
+      console.log("clicked and has id");
       const id = event.target.getAttribute('data-id');
       const idNum = parseInt(id, 10);
   
@@ -158,9 +158,9 @@ if(document.querySelector('.new-park-form')) {
   
 // delete trip by id
 if(document.querySelector('.past-trip-delete')) {
-    document
-        .querySelector('.past-trip-delete')
-        .addEventListener('click', pastDelButtonHandler);
+  document
+      .querySelector('.past-trip-delete')
+      .addEventListener('click', pastDelButtonHandler);
 }
 if(document.querySelector('.future-trip-delete')) {
   document

@@ -63,11 +63,17 @@ app.get('/public/images/hero-canyon.png', (req, res) => {
 app.get('/public/images/hero-zions.png', (req, res) => {
   res.sendFile(__dirname + '/public/images/hero-zions.png');
 });
+app.get('/public/images/background.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/background.png');
+});
 app.get('/public/images/icon-closed.png', (req, res) => {
   res.sendFile(__dirname + '/public/images/icon-closed.png');
 });
 app.get('/public/images/icon-open.png', (req, res) => {
   res.sendFile(__dirname + '/public/images/icon-open.png');
+});
+app.get('/public/images/bg-hills.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/bg-hills.png');
 });
 app.use(routes);
 
