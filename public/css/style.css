@@ -4,11 +4,11 @@ header,
 }
 
 main {
-  min-height:200px;
+  min-height: 200px;
 }
 
-footer { 
-  padding:25px 0; 
+footer {
+  padding: 25px 0;
 }
 
 .no-button {
@@ -33,55 +33,22 @@ footer {
 }
 
 .new-park-form #past-trip-fields,
-.new-park-form #future-trip-fields { 
-  display:none; 
+.new-park-form #future-trip-fields {
+  display: none;
 }
 
-.new-park-form input, 
-.new-park-form textarea, 
+.new-park-form input,
+.new-park-form textarea,
 .new-park-form select {
-  border:1px solid #ddd;
+  border: 1px solid #ddd;
 }
 
 .past-trip-delete,
-.future-trip-delete { 
-  float:right; 
+.future-trip-delete {
+  float: right;
 }
 
 .past-trip-delete i.fa,
-.future-trip-delete i.fa { 
-  font-size:36px; 
+.future-trip-delete i.fa {
+  font-size: 36px;
 }
-
-/* --- ACCORDION STYLING --*/
-/* NOTE: Be sure to change the colors and structure. */
-/* I dropped it in as-is from the last project.      */
-
-/* .accordion h4 {
-  background-color: #000;
-  border: 1px solid #333;
-  color: #fff;
-  margin-top: 8px;
-  padding: 15px 35px;
-  background-image: url(../images/icon-open.png);
-  background-repeat: no-repeat;
-  background-position: right top;
-  transition: background-color 0.4s ease;
-  cursor: pointer;
-}
-
-.accordion h4:hover {
-  background-color: #1a1a1a;
-}
-
-.accordion h4.box-open {
-  background-image: url(../images/icon-closed.png);
-}
-
-.accordion .location-info {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 15px 35px;
-  color: #fff;
-  font-size: 1.15rem;
-  display: none;
-} */
