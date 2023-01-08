@@ -7,21 +7,19 @@
     <link rel='stylesheet' href='/css/jass.css' />
     <link rel='stylesheet' href='/css/styles.css' />
     <link rel='stylesheet' href='/css/style.css' />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+    />
     <style>
-      img#bodybg {
-        opacity: 0.3;
-        width:100%;
-        margin:0%;
-        height:160px;
-      }
+      img#bodybg { opacity: 0.3; width:100%; margin:0%; height:160px; }
     </style>
   </head>
 
   <body>
     <div>
       <header>
-        {{! Logo that doubles as button to return to home screen }}
+
         <h1 class='container.container-fluid mx-auto break-after-all m-3'>
           <a href='/'>
             <img
@@ -31,7 +29,6 @@
           </a>
         </h1>
 
-        <!-- Random hero images -->
         <p class='object-cover'>
           <img src='{{get_image}}' class='visible w-full' />
         </p>
@@ -40,12 +37,11 @@
           class='flex-wrap h-24 text-left space-x-6 bg-yellow-900 text-white text-lg pl-4 w-full pt-1 md:flex-nowrap md:h-12'
         >
           <a href='/'>HOME</a>
-          <!-- Conditionally render user pages and register/logout -->
+
           {{#if logged_in}}
             <a href='/past-trips'>PAST TRIPS</a>
             <a href='/planned-trips'>PLANNED TRIPS</a>
             <a href='/add-a-trip'>ADD A TRIP</a>
-            <a href='/profile'>PROFILE</a>
             <button class='no-button' id='logout'>LOGOUT</button>
           {{else}}
             <a href='/register'>REGISTER</a>
@@ -54,17 +50,18 @@
       </header>
 
       <main class='container container-fluid mt-5'>
-        <!-- Render the sub layout -->
+
         {{{body}}}
       </main>
 
       <footer class='text-center font-thin text-slate-700 mt-10'>
         <div>
           <p>
-            <img class="w-full max-h-40 "
+            <img
+              class='w-full max-h-40'
               src='./public/images/bg-hills.png'
               alt='bg-hills'
-              id="bodybg"
+              id='bodybg'
             />
           </p>
         </div>
@@ -72,7 +69,6 @@
       </footer>
     </div>
 
-    <!-- Render script for logged in users only -->
     {{#if logged_in}}
       <script src='/js/logout.js'></script>
     {{/if}}
