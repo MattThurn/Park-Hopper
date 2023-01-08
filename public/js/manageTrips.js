@@ -8,7 +8,7 @@ const newParkHandler = async (event) => {
 
     console.log("new trip form submitted");
 
-    const user_id = "2"; // HARD-CODED TILL WE CONNECT USERS AND TRIPS
+    const user_id = "2";
     const park_name = document.querySelector('#park-name').value.trim();
     const travel_month = document.querySelector('#trip-month').value;
     const travel_year = document.querySelector('#trip-year').value.trim();
