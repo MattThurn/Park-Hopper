@@ -3,6 +3,14 @@ header,
   border-bottom: 1px solid #ccc;
 }
 
+main {
+  min-height:200px;
+}
+
+footer { 
+  padding:25px 0; 
+}
+
 .no-button {
   background: none;
   border: none;
@@ -33,6 +41,16 @@ header,
 .new-park-form textarea, 
 .new-park-form select {
   border:1px solid #ddd;
+}
+
+.past-trip-delete,
+.future-trip-delete { 
+  float:right; 
+}
+
+.past-trip-delete i.fa,
+.future-trip-delete i.fa { 
+  font-size:36px; 
 }
 
 /* --- ACCORDION STYLING --*/
