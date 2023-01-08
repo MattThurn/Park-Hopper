@@ -25,7 +25,10 @@ N/A
 ## Usage
 
 Repo: https://github.com/MattThurn/Park-Hopper
+
 App: https://park-hopper.herokuapp.com/
+
+![Screenshot](screenshot.png)
 
 This can be used to journal past trips to national parks. There are areas for comments/reviews, who came with you, and what park you visited. Also, this app can be used to document future dream-trips. Including ideas, potential costs, and desired activities. 
 
@@ -33,13 +36,18 @@ This can be used to journal past trips to national parks. There are areas for co
 
 - Jennifer: https://github.com/JennyFletch
 - Matthew: https://github.com/MattThurn
-- Ethan: 
+- Ethan: https://github.com/Ethikry
 - Ryan: https://github.com/rtcottle
 
+Technologies --
 Tailwindcss: https://tailwindcss.com/
 MySQL: https://www.mysql.com/
+Sequelize: https://sequelize.org/ 
+Handlebars: https://handlebarsjs.com/
+Jquery: https://jquery.com/
+Express: https://expressjs.com/ 
 
-Images: 
+Images: https://unsplash.com/
 - Arches: https://unsplash.com/photos/MepkNCgX4VY
 - Grand Canyon: https://unsplash.com/photos/M0Y7_vHEuo4
 - Zions: https://unsplash.com/photos/BVteGnmsPzk
@@ -65,4 +73,4 @@ Via GitHub repository.
 
 ## Questions
 
-<!-- ADD HERE -->
+Via repo above.
