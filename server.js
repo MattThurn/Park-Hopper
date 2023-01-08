@@ -63,6 +63,9 @@ app.get('/public/images/hero-canyon.png', (req, res) => {
 app.get('/public/images/hero-zions.png', (req, res) => {
   res.sendFile(__dirname + '/public/images/hero-zions.png');
 });
+app.get('/public/images/background.png', (req, res) => {
+  res.sendFile(__dirname + '/public/images/background.png');
+});
 app.get('/public/images/icon-closed.png', (req, res) => {
   res.sendFile(__dirname + '/public/images/icon-closed.png');
 });

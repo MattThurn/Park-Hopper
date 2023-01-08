@@ -1,26 +1,40 @@
 {{!-- Register new user  --}}
+<div class='row space-x-1 mb-5 w-full'>
     <div class='col-md-5 bg-lime-900 rounded-md lg:w-2/5'>
-      <h2 class='text-white p-3 text-lg'>Register</h2>
+      <h2 class='text-white font-bold pt-3 pl-1 text-lg'>REGISTER</h2>
 
       <form class='form signup-form text-white'>
         <div class='form-group'>
-          <label for='name-signup'>Name:</label>
-          <input class='form-input' type='text' id='name-signup' />
+          {{!-- <label for='name1-signup'>Name</label> --}}
+          <input class='form-input' type='text' id='namelast-signup' placeholder="First Name" />
         </div>
         <div class='form-group'>
-          <label for='email-signup'>Email:</label>
-          <input class='form-input' type='text' id='email-signup' />
+          {{!-- <label for='name2-signup'>Last Name:</label> --}}
+          <input class='form-input' type='text' id='namefirst-signup' placeholder="Last Name" />
         </div>
         <div class='form-group'>
-          <label for='password-signup'>Password:</label>
-          <input class='form-input' type='password' id='password-signup' />
+          {{!-- <label for='email-signup'>User Login</label> --}}
+          <input class='form-input' type='text' id='email-signup' placeholder="email" />
         </div>
         <div class='form-group'>
-          <button class='btn bg-amber-600' type='submit'>Register</button>
+          {{!-- <label for='password-signup'>Password:</label> --}}
+          <input class='form-input' type='password' id='password-signup' placeholder="password" />
+        </div>
+        <div class='form-group'>
+          <button class='text-white btn bg-amber-600' type='submit'>REGISTER</button>
         </div>
       </form>
     </div>
+
+  <div class='col-md-5 rounded-md w-full lg:w-2/5'>
+    <h2 class='text-xl font-bold'>WELCOME TO PARK HOPPER!</h2>
+    </br>
+    <h4>A place to document past national park visits and dream of your next adventure! 
+    </h4>
+
   </div>
+
+</div>
 
 
 {{! IS THIS PAGE NEEDED ANY LONGER?  }}
@@ -66,4 +80,5 @@
   </div>
 </div>
 }}
-<script src='./js/login.js'></script>
+
+<script src='./js/register.js'></script>
